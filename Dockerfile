@@ -21,7 +21,7 @@
 # --------------------------------------------------------------------------------------------------
 # Base OS + tools
 # --------------------------------------------------------------------------------------------------
-FROM rafaelcatrou/docker_ghdl:v1.1
+FROM rafaelcatrou/docker_ghdl:v1.2
 MAINTAINER Rafael Catrou <rafael@localhost>
 
 RUN \
