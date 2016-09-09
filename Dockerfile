@@ -59,5 +59,18 @@ RUN apt-get install -y graphviz
 RUN apt-get install -y gtkwave
 
 # --------------------------------------------------------------------------------------------------
+# MongoDB
+# --------------------------------------------------------------------------------------------------
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+RUN echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+RUN apt-get update
+RUN apt-get install -y mongodb-org
+RUN python -m pip install pymongo
+RUN \
+    mkdir -p /tmp/mongodb/database && \
+    chmod -R 777 /tmp/mongodb
+
+RUN echo "Build success."
+# --------------------------------------------------------------------------------------------------
 # End
 # --------------------------------------------------------------------------------------------------
